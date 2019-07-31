@@ -18,6 +18,9 @@
           justify-center
           align-center
         >
+        <v-flex>
+          <Card v-for="c in 10" :key="c"/>
+        </v-flex>
           <v-flex shrink>
             <v-tooltip right>
               <template v-slot:activator="{ on }">
@@ -72,7 +75,11 @@
 </template>
 
 <script>
+import Card from "./Card.vue";
   export default {
+    components: {
+      Card
+    },
     props: {
       source: String,
     },
