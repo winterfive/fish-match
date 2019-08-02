@@ -1,5 +1,5 @@
 <template>
-  <v-app>    
+<v-container>
     <v-app-bar
       app
       color="indigo darken-3"
@@ -15,41 +15,12 @@
         fill-height
       >
         <v-layout
-          justify-center
-          align-center
+          row
         >
         <v-flex>
           <Card v-for="c in 10" :key="c"/>
         </v-flex>
           <v-flex shrink>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/QewYYx"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
           </v-flex>
         </v-layout>
       </v-container>
@@ -71,7 +42,7 @@
       <v-spacer></v-spacer>
       <span>&copy; 2019</span>
     </v-footer>
-  </v-app>
+    </v-container>
 </template>
 
 <script>
