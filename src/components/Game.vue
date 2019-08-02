@@ -1,15 +1,16 @@
 <template>
-<v-container>
+  <v-container>
+  <!-- Header -->
     <v-app-bar
       app
       color="indigo darken-3"
       dark
+      dense
     >
       <v-toolbar-title>Game Name</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="openOptions"></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-content>
       <v-container
         fluid
         fill-height
@@ -20,11 +21,8 @@
         <v-flex>
           <Card v-for="c in 10" :key="c"/>
         </v-flex>
-          <v-flex shrink>
-          </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
 
     <v-navigation-drawer
       v-model="right"
