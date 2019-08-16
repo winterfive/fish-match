@@ -13,12 +13,13 @@
     </v-app-bar>
     <!-- Cards -->
     <v-content fluid fill-height>
-      <v-layout wrap class="border" align-center
-          justify-center>
-        <v-flex v-for="c in 10" :key="c">           
-          <Card/>
-        </v-flex>
-      </v-layout>
+      <v-container>
+        <v-layout wrap>
+          <v-flex v-for="c in 10" :key="c">           
+            <Card/>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-content>
     
 
