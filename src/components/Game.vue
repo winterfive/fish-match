@@ -12,9 +12,10 @@
       <v-app-bar-nav-icon @click="openOptions"></v-app-bar-nav-icon>
     </v-app-bar>
     <!-- Cards -->
-    <v-content>
-      <v-layout row wrap>
-        <v-flex v-for="c in 10" :key="c" class="border">           
+    <v-content fluid fill-height>
+      <v-layout wrap class="border" align-center
+          justify-center>
+        <v-flex v-for="c in 10" :key="c">           
           <Card/>
         </v-flex>
       </v-layout>
