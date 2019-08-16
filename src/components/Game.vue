@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid pa-10>
   <!-- Header -->
     <v-app-bar
       app
@@ -11,18 +11,15 @@
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="openOptions"></v-app-bar-nav-icon>
     </v-app-bar>
-      <v-container
-        fluid
-        fill-height
-      >
-        <v-layout
-          row
-        >
-        <v-flex>
-          <Card v-for="c in 10" :key="c"/>
+    <!-- Cards -->
+    <v-content>
+      <v-layout row wrap>
+        <v-flex v-for="c in 10" :key="c" class="border">           
+          <Card/>
         </v-flex>
-        </v-layout>
-      </v-container>
+      </v-layout>
+    </v-content>
+    
 
     <v-navigation-drawer
       v-model="right"
@@ -63,4 +60,11 @@ import Card from "./Card.vue";
     }
   }
 </script>
+
+<style lang="scss" scoped>
+.border {
+  border: solid 1px red;
+}
+</style>
+
 
