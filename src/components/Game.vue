@@ -1,56 +1,27 @@
 <template>
-  <v-app>    
+  <v-container fluid pa-10>
+  <!-- Header -->
     <v-app-bar
       app
       color="indigo darken-3"
       dark
+      dense
     >
       <v-toolbar-title>Game Name</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="openOptions"></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-content>
-      <v-container
-        fluid
-        fill-height
-      >
-        <v-layout
-          justify-center
-          align-center
-        >
-          <v-flex shrink>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/QewYYx"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
+    <!-- Cards -->
+    <v-content fluid fill-height>
+      <v-container>
+        <v-layout wrap>
+          <v-flex v-for="c in 10" :key="c">           
+            <Card/>
           </v-flex>
         </v-layout>
       </v-container>
     </v-content>
+    
 
     <v-navigation-drawer
       v-model="right"
@@ -68,11 +39,15 @@
       <v-spacer></v-spacer>
       <span>&copy; 2019</span>
     </v-footer>
-  </v-app>
+    </v-container>
 </template>
 
 <script>
+import Card from "./Card.vue";
   export default {
+    components: {
+      Card
+    },
     props: {
       source: String,
     },
@@ -87,4 +62,11 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+.border {
+  border: solid 1px red;
+}
+</style>
+
 
